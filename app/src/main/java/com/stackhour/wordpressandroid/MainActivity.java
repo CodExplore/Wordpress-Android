@@ -40,6 +40,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+		
+		setupWindowAnimations()
+    }
+	
+	   //set up transition
+    private void setupWindowAnimations() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Fade fade = new Fade();
+            fade.setDuration(700);
+            getWindow().setEnterTransition(fade);
+        }
     }
 
     @Override
